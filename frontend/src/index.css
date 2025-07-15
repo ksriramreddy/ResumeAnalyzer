@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    /* display: flex; */
+}
+.card {
+    
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
+}
+
+.score{
+    width: 400px;
+    background: transparent;
+    border: #bebebe solid;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.score::after{
+    content: "j";
+    position: absolute;
+    /* width: 100%; */
+    /* z-index: 999; */
+    left: 0;
+
+    background: #000;
+}
