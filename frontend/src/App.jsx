@@ -16,6 +16,7 @@ function App() {
   "projects_match": 0,
   "experience_match": 0
 })
+const VITE_BACKEND_API = import.meta.env.VITE_BACKEND_API
 // console.log(result.skills_match?.toString);
 
   const fileRef = useRef(null)
@@ -35,7 +36,7 @@ function App() {
       const formData = new FormData()
       formData.append('file', selectedFile)
       formData.append('role', role)
-      const resp = await axios.post('http://localhost:8000/uploadfile', formData, {
+      const resp = await axios.post(`${VITE_BACKEND_API}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
