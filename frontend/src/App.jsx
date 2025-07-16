@@ -36,7 +36,7 @@ const VITE_BACKEND_API = import.meta.env.VITE_BACKEND_API
       const formData = new FormData()
       formData.append('file', selectedFile)
       formData.append('role', role)
-      const resp = await axios.post(`${VITE_BACKEND_API}`, formData, {
+      const resp = await axios.post(`${VITE_BACKEND_API}/uploadfile`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -90,7 +90,7 @@ const VITE_BACKEND_API = import.meta.env.VITE_BACKEND_API
             <div className={`absolute  bg-green-500   left-0 top-0 h-full `} style={{ width: `${result.experience_match}%` }}>
             </div>opj
           </div>
-            <h1 className="z-50">Peoject Match {result.projects_match}%</h1>
+            <h1 className="z-50">Project Match {result.projects_match}%</h1>
           <div className="w-[400px] duration  h-fit bg-transparent border border-[#bebebe] rounded-[30px] text-center relative overflow-hidden text-transparent">
             <div className={`absolute bg-green-500 left-0 top-0 h-full  transition-all duration ease-in-out`} style={{ width: `${result.projects_match}%` }}>
             </div>no
