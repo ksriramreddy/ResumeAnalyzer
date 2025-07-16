@@ -72,7 +72,7 @@ function App() {
           {
             selectedFile &&
             <div className="flex items-center justify-around w-[280px] border border-gray-700 p-2 rounded-lg">
-              <h1 className="w-[80%] text-[20px]">{selectedFile.name}</h1>
+              <h1 className="overflow-hidden w-[80%] text-[20px]">{selectedFile.name}</h1>
               <MdDelete onClick={() => { setSelectedFile(null) }} size={20} cursor={'pointer'} />
             </div>
           }
