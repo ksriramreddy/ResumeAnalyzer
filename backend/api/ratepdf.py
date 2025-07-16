@@ -11,14 +11,16 @@ def rate_pdf(text , role):
     prompt = f"""
     You are a professional AI recruiter and resume evaluator.
 
-    Given the following resume text and a target role, analyze the resume in three aspects:
-    - Skills
-    - Projects
-    - Experience
+    Given the following resume text and a target role, analyze the resume and provide:
 
-    Rate each aspect individually on a scale of 0 to 100 for how well it matches the target role.
+    - The strengths of the candidate based on the resume (highlight what is good).
+    - The weaknesses or gaps in the resume for this role.
+    - Suggestions for how the candidate can improve their resume to better fit this role.
 
-    Return a JSON object with keys: "skills_match", "projects_match", "experience_match".
+    Return your response strictly as a JSON object with these three keys:
+    - "strengths": (a list of strings)
+    - "weaknesses": (a list of strings)
+    - "suggestions": (a list of strings)
 
     Resume Text:
     \"\"\"
@@ -27,11 +29,11 @@ def rate_pdf(text , role):
 
     Target Role: {role}
 
-    Provide only the JSON object with integer percentages. Example:
+    Provide only the JSON object. Example format:
     {{
-    "skills_match": 80,
-    "projects_match": 75,
-    "experience_match": 60
+        "strengths": ["Strong technical skills", "Good project diversity"],
+        "weaknesses": ["Lacks leadership experience"],
+        "suggestions": ["Add a section on team management experience"]
     }}
     """
 
